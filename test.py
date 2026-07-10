@@ -22,6 +22,6 @@ for m in models_to_test:
             messages=[{"role": "user", "content": "Hi"}],
             max_tokens=10
         )
-        print(f"✅ WORKS: {m}")
+        print(f"WORKS: {m}")
     except Exception as e:
-        print(f"❌ FAILED: {m} → {str(e)[:60]}")
+        print(f"FAILED: {m} → {str(e)[:60]}")
