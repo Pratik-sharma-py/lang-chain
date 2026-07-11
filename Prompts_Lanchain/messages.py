@@ -9,10 +9,10 @@ llm = HuggingFacePipeline.from_model_id(
 model = ChatHuggingFace(llm = llm)
 
 message = [
-    SystemMessage(Content = 'You are a top engineer'),
-    HumanMessage(Content = 'Tell me about AI/ML')
+    SystemMessage(content = 'You are a top engineer'),
+    HumanMessage(content = 'Tell me about AI/ML')
 ]
 
 result = model.invoke(message)
-message.append(AIMessage(Content = result.content))
+message.append(AIMessage(content = result.content))
 print(message)

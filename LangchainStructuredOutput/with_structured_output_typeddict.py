@@ -1,11 +1,11 @@
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
-from dotenv import load_dotenv
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint, HuggingFacePipeline
+#from dotenv import load_dotenv
 from typing import TypedDict
 
-load_dotenv()
+#load_dotenv()
 
 llm = HuggingFaceEndpoint(
-    repo_id="Qwen/Qwen2.5-72B-Instruct",
+    model_id = "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     task = "text-generation"
 )
 

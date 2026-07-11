@@ -15,7 +15,7 @@ store_chat = [
 
 
 while True:
-    user_input = input("YOU : ")
+    user_input = input("How can I help you Pratik : ")
     store_chat.append(HumanMessage(content = user_input)) # to store the user input and convert user_input as humanmessage
     if user_input == "exit":
         break

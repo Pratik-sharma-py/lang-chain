@@ -5,9 +5,9 @@ import os
 load_dotenv()
 
 llm = HuggingFaceEndpoint(
-    repo_id="Qwen/Qwen2.5-72B-Instruct",
+    repo_id="Qwen/Qwen2.5-0.5B-Instruct",
     huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_ACCESS_TOKEN"), 
-   # provider="hf-inference",                                          
+    provider="hf-inference",                                          
     task = "text-generation"
 )
 

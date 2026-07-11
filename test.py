@@ -4,7 +4,7 @@ import os
 
 load_dotenv()
 
-client = InferenceClient(token=os.getenv("HUGGINGFACEHUB_API_TOKEN"))
+client = InferenceClient(token=os.getenv("HUGGINGFACEHUB_ACCESS_TOKEN"))
 
 models_to_test = [
     "mistralai/Mistral-7B-Instruct-v0.3",
