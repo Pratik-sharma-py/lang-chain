@@ -4,8 +4,8 @@ from typing import TypedDict
 
 #load_dotenv()
 
-llm = HuggingFaceEndpoint(
-    model_id = "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+llm = HuggingFacePipeline.from_model_id(
+    model_id= "Qwen/Qwen2.5-1.5B-Instruct",
     task = "text-generation"
 )
 
