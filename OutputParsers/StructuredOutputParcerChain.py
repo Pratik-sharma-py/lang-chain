@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
-from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+from langchain_core.output_parsers import ResponseSchema, StructuredOutputParser
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
 load_dotenv()
@@ -26,14 +26,11 @@ parser = StructuredOutputParser.from_response_schemas(schema)
 template = PromptTemplate(
     template="Give 3 Facts about {topic}\n{format_instruction}",
     input_variables=['topic'],
-    partial_variables={'format_instruction': parser.get_format_instructions()}
+    partial_variables={'format_instruction':parser.get_format_instructions()}
 )
 
-prompt = template.invoke({'topic': 'black hole'})
+chain = template | model | parser 
 
-result = model.invoke(prompt)
+result = chain.invoke({'topic':'black hole'})
 
-final_result = parser.parse(result.content)
-
-print("\n--- Successfully Parsed JSON Output ---")
-print(final_result)
+print(result)

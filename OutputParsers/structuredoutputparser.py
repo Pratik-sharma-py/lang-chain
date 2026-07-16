@@ -1,9 +1,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
-
-# 1. FIXED IMPORTS: Correct path for schemas and added ChatHuggingFace
-from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+from langchain_core.output_parsers import ResponseSchema, StructuredOutputParser
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
 load_dotenv()
